@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
- * PopulateDatabase.xml
- *
- * Copyright (C) 2019 Universidad de Sevilla
- * 
- * The use of this project is hereby constrained to the conditions of the 
- * TDG Licence, a copy of which you may download from 
- * http://www.tdg-seville.info/License.html
- -->
+<!-- * PopulateDatabase.xml * * Copyright (C) 2019 Universidad de Sevilla 
+	* * The use of this project is hereby constrained to the conditions of the 
+	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
-	
+
 	<!-- User accounts -->
 
 	<bean id="userAccount1" class="security.UserAccount">
@@ -31,17 +25,16 @@
 	</bean>
 
 	<bean id="userAccount2" class="security.UserAccount">
-		<property name="username" value="customer" />
-		<property name="password" value="91ec1f9324753048c0096d036a694f86" />
+		<property name="username" value="administrator2" />
+		<property name="password" value="82954495ff7e2a735ed2192c35b2cd00" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="CUSTOMER" />
+					<property name="authority" value="ADMIN" />
 				</bean>
 			</list>
 		</property>
 	</bean>
-
 	<bean id="userAccount3" class="security.UserAccount">
 		<property name="username" value="super" />
 		<property name="password" value="1b3231655cebb7a1f783eddf27d254ca" />
@@ -56,7 +49,106 @@
 			</list>
 		</property>
 	</bean>
-	
-	<!-- Other domain beans come here -->	
-	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="administrator3" />
+		<property name="password" value="d1849d15043d73506d6a7523a1661e2d" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- Other domain beans come here -->
+
+	<bean id="configuration" class="domain.Configuration">
+		<property name="system" value="Acme Madrugá”" />
+		<property name="banner" value="https://tinyurl.com/acme-madruga" />
+		<property name="welcomMessageEng"
+			value="Welcome to Acme Madrugá, the site to organise your processions." />
+		<property name="welcomMessageEsp"
+			value="“¡Bienvenidos a Acme Madrugá! Tu sitio para organizar procesiones." />
+		<property name="countryCode" value="+34" />
+		<property name="finderDuration" value="60" />
+		<property name="maxFiders" value="10" />
+		<property name="absolutMaxFinders" value="100" />
+		<property name="positiveWords">
+			<list>
+				<value>good</value>
+				<value>fantastic</value>
+				<value>excellent</value>
+				<value>great</value>
+				<value>amazing</value>
+				<value>terrific</value>
+				<value>beautiful</value>
+				<value>bueno</value>
+				<value>fantástico</value>
+				<value>buena</value>
+				<value>fantástica</value>
+				<value>excelente</value>
+				<value>gran</value>
+				<value>increíble</value>
+				<value>terrorífico</value>
+				<value>hermoso</value>
+				<value>terrorífica</value>
+				<value>hermosa</value>
+			</list>
+		</property>
+		<property name="negativeWords">
+			<list>
+				<value>not</value>
+				<value>bad</value>
+				<value>horrible</value>
+				<value>average</value>
+				<value>disaster</value>
+				<value>no</value>
+				<value>malo</value>
+				<value>mala</value>
+				<value>horrible</value>
+				<value>mediocre</value>
+				<value>desastre</value>
+			</list>
+		</property>
+		<property name="positionEng">
+			<list>
+				<value>President</value>
+				<value>Vice President</value>
+				<value>Secretary</value>
+				<value>Treasurer</value>
+				<value>Historian</value>
+				<value>Fundraiser</value>
+				<value>Officer</value>
+			</list>
+		</property>
+		<property name="positionEsp">
+			<list>
+				<value>Presidente</value>
+				<value>Vicepresidente</value>
+				<value>Secretario</value>
+				<value>Tesorero</value>
+				<value>Historiador</value>
+				<value>Promotor</value>
+				<value>Vocal</value>
+			</list>
+		</property>
+		<property name="spam">
+			<list>
+				<value>sex</value>
+				<value>viagra</value>
+				<value>cialis</value>
+				<value>one million</value>
+				<value>you've been selected</value>
+				<value>Nigeria</value>
+				<value>sexo</value>
+				<value>un million</value>
+				<value>has sido seleccionado</value>			
+			</list>
+		</property>
+
+
+
+	</bean>
+
+
 </beans>

@@ -123,16 +123,16 @@
 		<property name="row" value=""/>
 		<property name="column" value=""/>
 		<property name="reason" value=""/>
-		<property name="member" value="member1"/>
-		<property name="procession" value="procession1"/>
+		<property name="member" ref="member1"/>
+		<property name="procession" ref="procession1"/>
 	</bean>
 		<bean id="march2" class="domain.March">
 		<property name="status" value="ACCEPTED"/>
 		<property name="row" value="1"/>
 		<property name="column" value="1"/>
 		<property name="reason" value=""/>
-		<property name="member" value="member2"/>
-		<property name="procession" value="procession2"/>
+		<property name="member" ref="member2"/>
+		<property name="procession" ref="procession2"/>
 	</bean>
 	
 </beans>

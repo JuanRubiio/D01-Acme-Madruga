@@ -58,5 +58,81 @@
 	</bean>
 	
 	<!-- Other domain beans come here -->	
+	<bean id="member1" class="domain.Member">
+		<property name="name" value="Carlos"/>
+		<property name="middleName" value="Jesús"/>
+		<property name="surname" value="García Borrego"/>
+		<property name="email" value="garciaborrego.carlos@gmail.com"/>
+		<property name="phone" value="693258741"/>
+		<property name="address" value="Calle queOsDenPerros,5"/>
+		<property name="userAccount" ref="userAccount10"/>
+		<property name="brotherHood" ref="brotherHood1"/>
+	</bean>
+	<bean id="member2" class="domain.Member">
+		<property name="name" value="Juan"/>
+		<property name="middleName" value="Ignacio"/>
+		<property name="surname" value="Jiménez Gutiérrez"/>
+		<property name="email" value="juanRubio@hotmail.com"/>
+		<property name="phone" value="698745123"/>
+		<property name="address" value="Calle esclavito,2"/>
+		<property name="userAccount" ref="userAccount11"/>
+		<property name="brotherHood" ref="brotherHood2"/>
+	</bean>
+	<bean id="member3" class="domain.Member">
+		<property name="name" value="José"/>
+		<property name="middleName" value="Manuel"/>
+		<property name="surname" value="Maestre Rodríguez"/>
+		<property name="email" value="jmmaestre@gmail.com"/>
+		<property name="phone" value="654789321"/>
+		<property name="address" value="Calle demeSuDroga,7"/>
+		<property name="userAccount" ref="userAccount12"/>
+		<property name="brotherHood" ref="brotherHood1"/>
+	</bean>
+	<bean id="member4" class="domain.Member">
+		<property name="name" value="Augusto"/>
+		<property name="middleName" value="José"/>
+		<property name="surname" value="Rivero Carmona"/>
+		<property name="email" value="augusto@hotmail.com"/>
+		<property name="phone" value="639875412"/>
+		<property name="address" value="Plaza Pablo Escobar,11"/>
+		<property name="userAccount" ref="userAccount13"/>
+		<property name="brotherHood" ref="brotherHood2"/>
+	</bean>
+	<bean id="member5" class="domain.Member">
+		<property name="name" value="Regina"/>
+		<property name="middleName" value=""/>
+		<property name="surname" value="Escalera Martín"/>
+		<property name="email" value="regina@gmail.com"/>
+		<property name="phone" value="648295173"/>
+		<property name="address" value="Calle Extremadura,17"/>
+		<property name="userAccount" ref="userAccount14"/>
+		<property name="brotherHood" ref="brotherHood1"/>
+	</bean>
+	<bean id="member6" class="domain.Member">
+		<property name="name" value="Francisco"/>
+		<property name="middleName" value="Javier"/>
+		<property name="surname" value="Marín Chaves"/>
+		<property name="email" value="javivi@gmail.com"/>
+		<property name="phone" value="684200115"/>
+		<property name="address" value="Calle rojo,23"/>
+		<property name="userAccount" ref="userAccount15"/>
+		<property name="brotherHood" ref="brotherHood2"/>
+	</bean>
+	<bean id="march1" class="domain.March">
+		<property name="status" value="PENDING"/>
+		<property name="row" value=""/>
+		<property name="column" value=""/>
+		<property name="reason" value=""/>
+		<property name="member" value="member1"/>
+		<property name="procession" value="procession1"/>
+	</bean>
+		<bean id="march2" class="domain.March">
+		<property name="status" value="ACCEPTED"/>
+		<property name="row" value="1"/>
+		<property name="column" value="1"/>
+		<property name="reason" value=""/>
+		<property name="member" value="member2"/>
+		<property name="procession" value="procession2"/>
+	</bean>
 	
 </beans>

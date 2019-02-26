@@ -8,20 +8,20 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import repositories.FloattRepository;
-import domain.Floatt;
+import repositories.FloatRepository;
+import domain.Float;
 
 @Component
 @Transactional
-public class StringToFloattConverter implements Converter<String, Floatt> {
+public class StringToFloatConverter implements Converter<String, Float> {
 
 	@Autowired
-	FloattRepository	floattRepository;
+	FloatRepository	floattRepository;
 
 
 	@Override
-	public Floatt convert(final String arg0) {
-		Floatt res;
+	public Float convert(final String arg0) {
+		Float res;
 		int id;
 		try {
 			if (StringUtils.isEmpty(arg0))

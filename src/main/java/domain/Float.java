@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Floatt extends DomainEntity {
+public class Float extends DomainEntity {
 
 	private String	title;
 	private String	description;

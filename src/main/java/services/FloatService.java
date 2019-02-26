@@ -9,25 +9,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import repositories.FloattRepository;
-import domain.Floatt;
+import repositories.FloatRepository;
+import domain.Float;
 
 @Service
 @Transactional
 public class FloatService {
 
 	@Autowired
-	private FloattRepository	floattRepository;
+	private FloatRepository	floattRepository;
 
 
-	private Floatt create() {
-		final Floatt res;
-		res = new Floatt();
+	private Float create() {
+		final Float res;
+		res = new Float();
 		return res;
 	}
 
-	private Floatt save(final Floatt floatt) {
-		Floatt res = new Floatt();
+	private Float save(final Float floatt) {
+		Float res = new Float();
 		Assert.notNull(floatt);
 		Assert.isTrue(floatt.getDescription() != "");
 
@@ -36,16 +36,16 @@ public class FloatService {
 		return res;
 	}
 
-	public Floatt findOne(final Integer floattId) {
-		Floatt res;
+	public Float findOne(final Integer floattId) {
+		Float res;
 		Assert.notNull(floattId);
 		res = this.floattRepository.findOne(floattId);
 		Assert.notNull(res);
 		return res;
 	}
 
-	public Collection<Floatt> findAll() {
-		Collection<Floatt> res;
+	public Collection<Float> findAll() {
+		Collection<Float> res;
 		res = this.floattRepository.findAll();
 		Assert.notNull(res);
 		return res;

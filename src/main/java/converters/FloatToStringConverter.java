@@ -6,14 +6,14 @@ import javax.transaction.Transactional;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import domain.Floatt;
+import domain.Float;
 
 @Component
 @Transactional
-public class FloattToStringConverter implements Converter<Floatt, String> {
+public class FloatToStringConverter implements Converter<Float, String> {
 
 	@Override
-	public String convert(final Floatt arg0) {
+	public String convert(final Float arg0) {
 		String res;
 		if (arg0 == null)
 			res = null;

@@ -59,4 +59,33 @@
 	
 	<!-- Other domain beans come here -->	
 	
+	<bean id="procession1" class="domain.Procession">
+	<property name="title" value="Procesión 1"></property>
+	<property name="description" value="descripcion para la procesión número 1"></property>
+	<property name="moment" value="01/01/2020 19:30"></property>
+	<property name="ticker" value="010120-AAAAA"></property>
+	<property name="draft" value="true"></property>
+	<property name="floatt" ref="floatt1" ></property>
+	</bean>
+	
+	<bean id="procession2" class="domain.Procession">
+	<property name="title" value="Procesión 2"></property>
+	<property name="description" value="descripcion para la procesión número 2"></property>
+	<property name="moment" value="01/01/2020 20:45"></property>
+	<property name="ticker" value="010120-BBBBB"></property>
+	<property name="draft" value="false"></property>
+	<property name="floatt" ref="floatt2" ></property>
+	
+	
+	</bean>
+	
+	<bean id="procession3" class="domain.Procession">
+	<property name="title" value="Procesión 3"></property>
+	<property name="description" value="descripcion para la procesión número 3"></property>
+	<property name="moment" value="01/01/2020 04:50"></property>
+	<property name="ticker" value="010120-CCCCC"></property>
+	<property name="draft" value="true"></property>
+	<property name="floatt" ref="floatt3" ></property>
+	
+	</bean>
 </beans>

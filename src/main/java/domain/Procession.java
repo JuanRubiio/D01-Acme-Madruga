@@ -7,6 +7,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -19,6 +20,7 @@ public class Procession extends DomainEntity {
 	private String	description;
 	private Date	moment;
 	private String	ticker;
+	private Boolean	draft;
 
 	//External attributes
 	private Float	floatt;
@@ -58,12 +60,22 @@ public class Procession extends DomainEntity {
 	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
+
+	@NotNull
+	public Boolean getDraft() {
+		return this.draft;
+	}
+
+	public void setDraft(final Boolean draft) {
+		this.draft = draft;
+	}
+
 	@OneToMany
-	public Float getFloat() {
+	public Float getFloatt() {
 		return this.floatt;
 	}
 
-	public void setFloat(final Float floatt) {
+	public void setFloatt(final Float floatt) {
 		this.floatt = floatt;
 	}
 

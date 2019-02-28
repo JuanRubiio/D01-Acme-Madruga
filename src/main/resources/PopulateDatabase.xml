@@ -43,9 +43,7 @@
 				<bean class="security.Authority">
 					<property name="authority" value="ADMIN" />
 				</bean>
-				<bean class="security.Authority">
-					<property name="authority" value="CUSTOMER" />
-				</bean>
+
 			</list>
 		</property>
 	</bean>
@@ -61,14 +59,51 @@
 		</property>
 	</bean>
 	<!-- Other domain beans come here -->
+	
+		<bean id="admin" class="domain.Administrator">
+		<property name="name" value="Juan" />
+		<property name="middleName" value="Lopez" />
+		<property name="surname" value="Martin" />
+		<property name="photo" value="http://www.google.com" />
+		<property name="email" value="administrator1@gmail.com" />
+		<property name="address" value="administratoraddress1" />
+		<property name="phone" value="666666666" />
+		<property name="userAccount" ref="userAccount1" />
+	</bean>
+
+	<bean id="administrator2" class="domain.Administrator">
+		<property name="name" value="Carlos" />
+		<property name="middleName" value="Ramirez" />
+		<property name="surname" value="Ramos" />
+		<property name="photo" value="http://www.google.com" />
+		<property name="email" value="administrator2@gmail.com" />
+		<property name="address" value="administratoraddress2" />
+		<property name="phone" value="666666688" />
+		<property name="userAccount" ref="userAccount2" />
+
+	</bean>
+	
+		<bean id="administrator3" class="domain.Administrator">
+		<property name="name" value="Augusto" />
+		<property name="middleName" value="Jimenez" />
+		<property name="surname" value="Ramos" />
+		<property name="photo" value="http://www.google.com" />
+		<property name="email" value="administrator2@gmail.com" />
+		<property name="address" value="administratoraddress2" />
+		<property name="phone" value="666666688" />
+		<property name="userAccount" ref="userAccount4" />
+
+	</bean>
+	
+	
 
 	<bean id="configuration" class="domain.Configuration">
-		<property name="system" value="Acme Madrugá”" />
+		<property name="system" value="Acme Madrugá" />
 		<property name="banner" value="https://tinyurl.com/acme-madruga" />
 		<property name="welcomMessageEng"
 			value="Welcome to Acme Madrugá, the site to organise your processions." />
 		<property name="welcomMessageEsp"
-			value="“¡Bienvenidos a Acme Madrugá! Tu sitio para organizar procesiones." />
+			value="¡Bienvenidos a Acme Madrugá! Tu sitio para organizar procesiones." />
 		<property name="countryCode" value="+34" />
 		<property name="finderDuration" value="60" />
 		<property name="maxFiders" value="10" />

@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -16,14 +17,14 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Procession extends DomainEntity {
 
-	private String	title;
-	private String	description;
-	private Date	moment;
-	private String	ticker;
-	private Boolean	draft;
+	private String				title;
+	private String				description;
+	private Date				moment;
+	private String				ticker;
+	private Boolean				draft;
 
 	//External attributes
-	private Float	floatt;
+	private Collection<Float>	floats;
 
 
 	@NotBlank
@@ -71,12 +72,12 @@ public class Procession extends DomainEntity {
 	}
 
 	@OneToMany
-	public Float getFloatt() {
-		return this.floatt;
+	public Collection<Float> getFloats() {
+		return this.floats;
 	}
 
-	public void setFloatt(final Float floatt) {
-		this.floatt = floatt;
+	public void setFloats(final Collection<Float> floats) {
+		this.floats = floats;
 	}
 
 }

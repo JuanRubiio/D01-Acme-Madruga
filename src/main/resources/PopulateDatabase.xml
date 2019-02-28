@@ -57,7 +57,25 @@
 		</property>
 	</bean>
 	
-	<!-- Other domain beans come here -->	
+	<!-- Other domain beans come here -->
+	
+	<bean id="floatt1" class="domain.Float">
+	<property name="title" value="Float 1"></property>
+	<property name="description" value="descripcion para el paso número 1"></property>
+	<property name="photos" value="http://www.google.com"></property>
+	</bean>
+	
+	<bean id="floatt2" class="domain.Float">
+	<property name="title" value="Float 2"></property>
+	<property name="description" value="descripcion para el paso número 2"></property>
+	<property name="photos" value="http://www.google.com"></property>
+	</bean>
+	
+	<bean id="floatt3" class="domain.Float">
+	<property name="title" value="Float 3"></property>
+	<property name="description" value="descripcion para el paso número 3"></property>
+	<property name="photos" value="http://www.google.com"></property>
+</bean>	
 	
 	<bean id="procession1" class="domain.Procession">
 	<property name="title" value="Procesión 1"></property>
@@ -65,7 +83,12 @@
 	<property name="moment" value="01/01/2020 19:30"></property>
 	<property name="ticker" value="010120-AAAAA"></property>
 	<property name="draft" value="true"></property>
-	<property name="floatt" ref="floatt1" ></property>
+		<property name="floats">
+		<list>
+			<ref bean="floatt1" />
+		</list>
+	
+	</property>
 	</bean>
 	
 	<bean id="procession2" class="domain.Procession">
@@ -74,7 +97,12 @@
 	<property name="moment" value="01/01/2020 20:45"></property>
 	<property name="ticker" value="010120-BBBBB"></property>
 	<property name="draft" value="false"></property>
-	<property name="floatt" ref="floatt2" ></property>
+		<property name="floats">
+		<list>
+			<ref bean="floatt2" />
+		</list>
+	
+	</property>
 	
 	
 	</bean>
@@ -85,7 +113,12 @@
 	<property name="moment" value="01/01/2020 04:50"></property>
 	<property name="ticker" value="010120-CCCCC"></property>
 	<property name="draft" value="true"></property>
-	<property name="floatt" ref="floatt3" ></property>
+	<property name="floats">
+		<list>
+			<ref bean="floatt3" />
+		</list>
+	
+	</property>
 	
 	</bean>
 </beans>

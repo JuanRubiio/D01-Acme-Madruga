@@ -52,6 +52,7 @@ public class ProcessionService {
 
 	public Procession save(final Procession procession) {
 		Assert.notNull(procession);
+		Assert.isTrue(procession.getDraft() == false);
 
 		final Procession res = this.processionRepository.save(procession);
 		Assert.notNull(res);

@@ -50,4 +50,9 @@ public class FloatService {
 		Assert.notNull(res);
 		return res;
 	}
+
+	public void delete(final Float floatt) {
+		Assert.notNull(floatt);
+		this.floattRepository.delete(floatt);
+	}
 }

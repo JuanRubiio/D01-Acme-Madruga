@@ -2,6 +2,7 @@
 package services;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class ProcessionService {
 		return res;
 	}
 
-	public Procession create(final Collection<Float> floats) {
+	public Procession create(final List<Float> floats) {
 		Procession res;
 		res = new Procession();
 
@@ -52,7 +53,7 @@ public class ProcessionService {
 
 	public Procession save(final Procession procession) {
 		Assert.notNull(procession);
-		Assert.isTrue(procession.getDraft() == false);
+		Assert.isTrue(procession.getDraft() == true);
 
 		final Procession res = this.processionRepository.save(procession);
 		Assert.notNull(res);
@@ -60,12 +61,11 @@ public class ProcessionService {
 		return res;
 	}
 
-	public Procession delete(final Procession procession) {
-		Assert.notNull(procession);
-		this.processionRepository.delete(procession);
-		Assert.isNull(this.processionRepository.findOne(procession.getId()));
-		return procession;
-
+	public void delete(final Integer processionId) {
+		Assert.notNull(processionId);
+		Assert.notNull(this.processionRepository.findOne(processionId));
+		this.processionRepository.delete(processionId);
+		Assert.isNull(this.processionRepository.findOne(processionId));
 	}
 
 }

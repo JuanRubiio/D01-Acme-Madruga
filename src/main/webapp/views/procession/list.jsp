@@ -16,19 +16,22 @@
 	<spring:message code="procession.ticker" var="tickerHeader" />
 	<display:column property="ticker" title="${tickerHeader}" />
 	
-	<display:column>
-	<security:authorize access="hasRole('CUSTOMER')">
-		<a href="complaint/customer/show.do?complaintId=${row.id}">
-			<spring:message code="complaint.show"/>
-		</a>
-	</security:authorize>
+	<spring:message code="procession.title" var="titleHeader" />
+	<display:column property="title" title="${titleHeader}" />
 	
-	<security:authorize access="hasRole('REFEREE')">
-		<a href="report/referee/create.do?complaintId=${row.id}">
-			<spring:message code="report.create"/>
-		</a>
-	</security:authorize>
+	<display:column> 
+	<a href="procession/show.do?processionId=${row.id}">
+			<spring:message code="procession.show"/>
+	</a> 
+	</display:column>
 	
-	</display:column>	
+	<display:column> 
+	<a href="procession/brotherhood/edit.do?processionId=${row.id}">
+			<spring:message code="procession.edit"/>
+	</a> 
+	</display:column>
+	
+	
+	
 </display:table>
 </div>

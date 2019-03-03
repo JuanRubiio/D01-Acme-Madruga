@@ -75,6 +75,6 @@
 	<property name="title" value="Float 3"></property>
 	<property name="description" value="descripcion para el paso número 3"></property>
 	<property name="photos" value="http://www.google.com"></property>
-	</bean>
+</bean>	
 	
 </beans>

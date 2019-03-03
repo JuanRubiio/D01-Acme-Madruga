@@ -20,13 +20,13 @@ public class FloatService {
 	private FloatRepository	floattRepository;
 
 
-	private Float create() {
+	public Float create() {
 		final Float res;
 		res = new Float();
 		return res;
 	}
 
-	private Float save(final Float floatt) {
+	public Float save(final Float floatt) {
 		Float res = new Float();
 		Assert.notNull(floatt);
 		Assert.isTrue(floatt.getDescription() != "");

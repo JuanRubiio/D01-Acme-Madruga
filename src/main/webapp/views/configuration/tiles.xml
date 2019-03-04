@@ -26,7 +26,11 @@
 		<put-attribute name="title" value="Show spam" />
 		<put-attribute name="body" value="/views/configuration/showSpam.jsp" />
 	</definition>
-
+	<definition name="configuration/showPosition" extends="master.page">
+		<put-attribute name="title" value="Show positions" />
+		<put-attribute name="body" value="/views/configuration/showPosition.jsp" />
+	</definition>
+	
 		<definition name="configuration/editSpamWord" extends="master.page">
 		<put-attribute name="title" value="Create spam" />
 		<put-attribute name="body" value="/views/configuration/editSpamWord.jsp" />

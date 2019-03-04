@@ -32,9 +32,7 @@
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
-	<form:hidden path="spam" />
-	<form:hidden path="positiveWords" />
-	<form:hidden path="negativeWords" />
+
 	<form:hidden path="positionEsp" />
 	<form:hidden path="positionEng" />
 	
@@ -64,15 +62,6 @@
 	<acme:textbox code="configuration.absolutMaxFinders" path="absolutMaxFinders" readonly="${readonly}"/>
 	<br />
 	
-	
-	<input type="button" name="spam"
-		value="<spring:message code="configuration.spam" />"
-		onclick="javascript: relativeRedir('configuration/administrator/showSpam.do');" />
-	
-	<input type="button" name="words"
-		value="<spring:message code="configuration.words" />"
-		onclick="javascript: relativeRedir('configuration/administrator/showWords.do');" />
-
 	<input type="button" name="position"
 		value="<spring:message code="configuration.position" />"
 		onclick="javascript: relativeRedir('configuration/administrator/showPosition.do');" />

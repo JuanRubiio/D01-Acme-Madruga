@@ -20,19 +20,12 @@
 		<put-attribute name="body" value="/views/configuration/edit.jsp" />
 	</definition>
 	
-	<definition name="configuration/showSpam" extends="master.page">
-		<put-attribute name="title" value="Mostrar spam" />
-		<put-attribute name="body" value="/views/configuration/showSpam.jsp" />
+
+	<definition name="configuration/showPosition" extends="master.page">
+		<put-attribute name="title" value="Mostrar posiciones" />
+		<put-attribute name="body" value="/views/configuration/showPosition.jsp" />
 	</definition>
 	
-		<definition name="configuration/editSpamWord" extends="master.page">
-		<put-attribute name="title" value="Crear spam" />
-		<put-attribute name="body" value="/views/configuration/editSpamWord.jsp" />
-	</definition>
-	
-			<definition name="configuration/showWords" extends="master.page">
-		<put-attribute name="title" value="Mostrar palabras negativas y positivas" />
-		<put-attribute name="body" value="/views/configuration/showWords.jsp" />
-	</definition>
+
 	
 </tiles-definitions>

@@ -13,11 +13,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
-<display:table name="spam" id="row" requestURI="${requestURI}"
+<jstl:choose>
+<jstl:when test="${language==es}">
+<display:table name="positionEsp" id="row" requestURI="${requestURI}"
 	pagesize="10" class="displaytag">
 
 
-	<display:column titleKey="configuration.spam">
+	<display:column titleKey="configuration.position">
 		<a>${row}</a>
 	</display:column>
 
@@ -26,15 +28,38 @@
 		<display:column titleKey="configuration.delete">
 			<input type="submit" name="delete" 
 				value="<spring:message code="configuration.delete" />"
-				onclick="javascript: relativeRedir('configuration/administrator/deleteSpam.do?spam=${row}');" />
+				onclick="javascript: relativeRedir('configuration/administrator/deletePosition.do?position=${row}');" />
 
 		</display:column>
 
 	</security:authorize>
 
 </display:table>
+</jstl:when>
+
+<jstl:when test="${language==en}">
+<display:table name="positionEng" id="row" requestURI="${requestURI}"
+	pagesize="10" class="displaytag">
 
 
+	<display:column titleKey="configuration.position">
+		<a>${row}</a>
+	</display:column>
+
+	
+	<security:authorize access="hasRole('ADMIN')">
+		<display:column titleKey="configuration.delete">
+			<input type="submit" name="delete" 
+				value="<spring:message code="configuration.delete" />"
+				onclick="javascript: relativeRedir('configuration/administrator/deletePosition.do?position=${row}');" />
+
+		</display:column>
+
+	</security:authorize>
+
+</display:table>
+</jstl:when>
+</jstl:choose>
 <security:authorize access="hasRole('ADMIN')">
 	<input type="submit" name="create"
 		value="<spring:message code="configuration.create" />"

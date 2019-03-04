@@ -108,43 +108,7 @@
 		<property name="finderDuration" value="60" />
 		<property name="maxFiders" value="10" />
 		<property name="absolutMaxFinders" value="100" />
-		<property name="positiveWords">
-			<list>
-				<value>good</value>
-				<value>fantastic</value>
-				<value>excellent</value>
-				<value>great</value>
-				<value>amazing</value>
-				<value>terrific</value>
-				<value>beautiful</value>
-				<value>bueno</value>
-				<value>fantástico</value>
-				<value>buena</value>
-				<value>fantástica</value>
-				<value>excelente</value>
-				<value>gran</value>
-				<value>increíble</value>
-				<value>terrorífico</value>
-				<value>hermoso</value>
-				<value>terrorífica</value>
-				<value>hermosa</value>
-			</list>
-		</property>
-		<property name="negativeWords">
-			<list>
-				<value>not</value>
-				<value>bad</value>
-				<value>horrible</value>
-				<value>average</value>
-				<value>disaster</value>
-				<value>no</value>
-				<value>malo</value>
-				<value>mala</value>
-				<value>horrible</value>
-				<value>mediocre</value>
-				<value>desastre</value>
-			</list>
-		</property>
+		
 		<property name="positionEng">
 			<list>
 				<value>President</value>
@@ -167,21 +131,6 @@
 				<value>Vocal</value>
 			</list>
 		</property>
-		<property name="spam">
-			<list>
-				<value>sex</value>
-				<value>viagra</value>
-				<value>cialis</value>
-				<value>one million</value>
-				<value>you've been selected</value>
-				<value>Nigeria</value>
-				<value>sexo</value>
-				<value>un million</value>
-				<value>has sido seleccionado</value>			
-			</list>
-		</property>
-
-
 
 	</bean>
 

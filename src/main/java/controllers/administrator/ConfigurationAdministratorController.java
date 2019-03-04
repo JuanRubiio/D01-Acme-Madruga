@@ -11,7 +11,6 @@ import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import services.ConfigurationService;
@@ -71,137 +70,17 @@ public class ConfigurationAdministratorController extends AbstractController {
 		return res;
 	}
 
-	@RequestMapping(value = "/showSpam", method = RequestMethod.GET)
-	public ModelAndView showSpam() {
-		final ModelAndView res = new ModelAndView("configuration/showSpam");
+	@RequestMapping(value = "/showPosition", method = RequestMethod.GET)
+	public ModelAndView showPosition() {
+		final ModelAndView res = new ModelAndView("configuration/showPosition");
 		Configuration configlate = new Configuration();
 		final Collection<Configuration> configurations = this.configurationService.findAll();
 		for (final Configuration t : configurations)
 			if (configurations.size() == 1)
 				configlate = t;
-		res.addObject("spam", configlate.getSpam());
+		res.addObject("positionEsp", configlate.getPositionEsp());
+		res.addObject("positionEng", configlate.getPositionEng());
 
-		return res;
-	}
-
-	@RequestMapping(value = "/showWords", method = RequestMethod.GET)
-	public ModelAndView showPositiveWords() {
-		final ModelAndView res = new ModelAndView("configuration/showWords");
-		Configuration configlate = new Configuration();
-		final Collection<Configuration> configurations = this.configurationService.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-		res.addObject("positiveWords", configlate.getPositiveWords());
-		res.addObject("negativeWords", configlate.getNegativeWords());
-
-		return res;
-	}
-
-	//	@RequestMapping(value = "/showNegative", method = RequestMethod.GET)
-	//	public ModelAndView showNegativeWords() {
-	//		final ModelAndView res = new ModelAndView("configuration/showWords");
-	//		final String negative = "negative";
-	//		Configuration configlate = new Configuration();
-	//		final Collection<Configuration> configurations = this.configurationService.findAll();
-	//		for (final Configuration t : configurations)
-	//			if (configurations.size() == 1)
-	//				configlate = t;
-	//		res.addObject("words", configlate.getNegativeWords());
-	//		res.addObject("type", negative);
-	//
-	//		return res;
-	//	}
-
-	@RequestMapping(value = "/createSpam", method = RequestMethod.GET)
-	public ModelAndView editSpam() {
-		final ModelAndView result;
-		final String word = new String();
-		result = new ModelAndView("configuration/editSpamWord");
-		result.addObject("word", word);
-
-		return result;
-	}
-
-	@RequestMapping(value = "/createSpam", method = RequestMethod.POST, params = "save")
-	public ModelAndView editSpam(@Valid final String word, final BindingResult result) {
-		ModelAndView res = new ModelAndView();
-		if (result.hasErrors()) {
-			res = new ModelAndView("configuration/editSpamWord");
-			res.addObject("word", word);
-		} else
-			try {
-				this.configurationService.CreateSpamWord(word);
-				res = new ModelAndView("redirect:/#");
-			} catch (final Throwable oops) {
-				System.out.println(oops.getMessage());
-			}
-		return res;
-	}
-
-	@RequestMapping(value = "/deleteSpam", method = RequestMethod.GET)
-	public ModelAndView delete(@RequestParam final String word) {
-		final ModelAndView res = new ModelAndView("redirect:/configuration/administrator/show.do");
-		try {
-			this.configurationService.deleteSpamWord(word);
-
-		} catch (final Throwable oops) {
-			System.out.println(oops.getMessage());
-
-		}
-
-		return res;
-	}
-
-	@RequestMapping(value = "/positive/edit", method = RequestMethod.GET)
-	public ModelAndView editPositive() {
-		final ModelAndView result;
-		final String word = new String();
-		result = new ModelAndView("configuration/editWord");
-		result.addObject("word", word);
-
-		return result;
-	}
-
-	@RequestMapping(value = "/positive/edit", method = RequestMethod.POST, params = "save")
-	public ModelAndView editPositive(@Valid final String word, final BindingResult result) {
-		ModelAndView res = new ModelAndView();
-		if (result.hasErrors()) {
-			res = new ModelAndView("configuration/editWord");
-			res.addObject("word", word);
-		} else
-			try {
-				this.configurationService.CreatePositiveWord(word);
-				res = new ModelAndView("redirect:/#");
-			} catch (final Throwable oops) {
-				System.out.println(oops.getMessage());
-			}
-		return res;
-	}
-
-	@RequestMapping(value = "/negative/edit", method = RequestMethod.GET)
-	public ModelAndView editNegative() {
-		final ModelAndView result;
-		final String word = new String();
-		result = new ModelAndView("configuration/editWord");
-		result.addObject("word", word);
-
-		return result;
-	}
-
-	@RequestMapping(value = "/negative/edit", method = RequestMethod.POST, params = "save")
-	public ModelAndView editNegative(@Valid final String word, final BindingResult result) {
-		ModelAndView res = new ModelAndView();
-		if (result.hasErrors()) {
-			res = new ModelAndView("configuration/editWord");
-			res.addObject("word", word);
-		} else
-			try {
-				this.configurationService.CreateNegativeWord(word);
-				res = new ModelAndView("redirect:/#");
-			} catch (final Throwable oops) {
-				System.out.println(oops.getMessage());
-			}
 		return res;
 	}
 

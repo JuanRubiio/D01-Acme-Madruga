@@ -15,36 +15,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/profile")
+@RequestMapping("/about")
 public class ProfileController extends AbstractController {
 
-	// Action-1 ---------------------------------------------------------------		
-
-	@RequestMapping("/action-1")
-	public ModelAndView action1() {
+	@RequestMapping("/cookies")
+	public ModelAndView cookies() {
 		ModelAndView result;
 
-		result = new ModelAndView("profile/action-1");
+		result = new ModelAndView("about/cookies");
 
 		return result;
 	}
 
-	// Action-2 ---------------------------------------------------------------		
-
-	@RequestMapping("/action-2")
-	public ModelAndView action2() {
+	@RequestMapping("/terms")
+	public ModelAndView terms() {
 		ModelAndView result;
 
-		result = new ModelAndView("profile/action-2");
+		result = new ModelAndView("about/terms");
 
 		return result;
 	}
 
-	// Action-2 ---------------------------------------------------------------		
+	@RequestMapping("/contact")
+	public ModelAndView contact() {
+		ModelAndView result;
 
-	@RequestMapping("/action-3")
-	public ModelAndView action3() {
-		throw new RuntimeException("Oops! An *expected* exception was thrown. This is normal behaviour.");
+		result = new ModelAndView("about/contact");
+
+		return result;
+	}
+
+	@RequestMapping("/privacy")
+	public ModelAndView privacy() {
+		ModelAndView result;
+
+		result = new ModelAndView("about/privacy");
+
+		return result;
 	}
 
 }

@@ -24,9 +24,6 @@ public class AdministratorService {
 	private AdministratorRepository	administratorRepository;
 
 
-	//	@Autowired
-	//private MessageBoxService		messageBoxService;
-
 	public Administrator create() {
 		Administrator res;
 
@@ -39,7 +36,6 @@ public class AdministratorService {
 		userAccount.setAuthorities(authorities);
 		Assert.notNull(res);
 		res.setUserAccount(userAccount);
-		//this.messageBoxService.addDefaultMessageBoxs(res);
 
 		return res;
 	}

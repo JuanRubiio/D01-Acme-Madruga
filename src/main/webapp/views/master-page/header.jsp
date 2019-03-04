@@ -40,6 +40,13 @@
 			</li>
 		</security:authorize>
 		
+				<security:authorize access="hasRole('BROTHERHOOD')">
+			<li><a class="fNiv" href="floatt/brotherhood/list.do"><spring:message code="master.page.brotherhood.floatts" /></a></li>
+
+		</security:authorize>
+		
+		
+		
 		<security:authorize access="isAnonymous()">
 			<li><a class="fNiv" href="security/login.do"><spring:message code="master.page.login" /></a></li>
 		</security:authorize>

@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
- * PopulateDatabase.xml
- *
- * Copyright (C) 2019 Universidad de Sevilla
- * 
- * The use of this project is hereby constrained to the conditions of the 
- * TDG Licence, a copy of which you may download from 
- * http://www.tdg-seville.info/License.html
- -->
+<!-- * PopulateDatabase.xml * * Copyright (C) 2019 Universidad de Sevilla 
+	* * The use of this project is hereby constrained to the conditions of the 
+	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
-	
+
 	<!-- User accounts -->
 
 	<bean id="userAccount1" class="security.UserAccount">
@@ -42,6 +36,7 @@
 		</property>
 	</bean>
 
+
 	<bean id="userAccount3" class="security.UserAccount">
 		<property name="username" value="super" />
 		<property name="password" value="1b3231655cebb7a1f783eddf27d254ca" />
@@ -56,25 +51,51 @@
 			</list>
 		</property>
 	</bean>
-	
-	<!-- Other domain beans come here -->	
-	
+
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="brotherhood1" />
+		<property name="password" value="479e3180a45b21ea8e88beb0c45aa8ed" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="BROTHERHOOD" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="brotherhood1" class="domain.Brotherhood">
+		<property name="name" value="Carlos" />
+		<property name="middleName" value="Jesús" />
+		<property name="surname" value="García Borrego" />
+		<property name="email" value="garciaborrego.carlos@gmail.com" />
+		<property name="phone" value="693258741" />
+		<property name="address" value="Calle queOsDenPerros,5" />
+		<property name="userAccount" ref="userAccount4" />
+		<property name="title" value="hermandad1" />
+		<property name="stablishmentDate" value="01/01/1998 10:34" />
+		<property name="photo" value="http://www.google.com" />
+			<property name="photoB" value="hermandad1" />
+	</bean>
+
+	<!-- Other domain beans come here -->
+
 	<bean id="floatt1" class="domain.Float">
-	<property name="title" value="Float 1"></property>
-	<property name="description" value="descripcion para el paso número 1"></property>
-	<property name="photos" value="http://www.google.com"></property>
+		<property name="title" value="Float 1"></property>
+		<property name="description" value="descripcion para el paso número 1"></property>
+		<property name="photos" value="http://www.google.com"></property>
 	</bean>
-	
+
 	<bean id="floatt2" class="domain.Float">
-	<property name="title" value="Float 2"></property>
-	<property name="description" value="descripcion para el paso número 2"></property>
-	<property name="photos" value="http://www.google.com"></property>
+		<property name="title" value="Float 2"></property>
+		<property name="description" value="descripcion para el paso número 2"></property>
+		<property name="photos" value="http://www.google.com"></property>
 	</bean>
-	
+
 	<bean id="floatt3" class="domain.Float">
-	<property name="title" value="Float 3"></property>
-	<property name="description" value="descripcion para el paso número 3"></property>
-	<property name="photos" value="http://www.google.com"></property>
-</bean>	
-	
+		<property name="title" value="Float 3"></property>
+		<property name="description" value="descripcion para el paso número 3"></property>
+		<property name="photos" value="http://www.google.com"></property>
+	</bean>
+
 </beans>

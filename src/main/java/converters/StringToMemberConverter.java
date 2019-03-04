@@ -22,9 +22,10 @@ public class StringToMemberConverter implements Converter<String, Member> {
 		try {
 			if (StringUtils.isEmpty(text))
 				res = null;
-			else
+			else {
 				id = Integer.valueOf(text);
-			res = this.memberRepository.findOne(id);
+				res = this.memberRepository.findOne(id);
+			}
 		} catch (final Throwable oops) {
 			throw new IllegalArgumentException(oops);
 		}

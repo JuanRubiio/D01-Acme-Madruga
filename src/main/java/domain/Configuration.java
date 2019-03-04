@@ -34,15 +34,9 @@ public class Configuration extends DomainEntity {
 
 	private int				absolutMaxFinders;
 
-	private List<String>	positiveWords;
-
-	private List<String>	negativeWords;
-
 	private List<String>	positionEng;
 
 	private List<String>	positionEsp;
-
-	private List<String>	spam;
 
 
 	@NotNull
@@ -122,26 +116,6 @@ public class Configuration extends DomainEntity {
 
 	@NotNull
 	@ElementCollection
-	public List<String> getPositiveWords() {
-		return this.positiveWords;
-	}
-
-	public void setPositiveWords(final List<String> positiveWords) {
-		this.positiveWords = positiveWords;
-	}
-
-	@NotNull
-	@ElementCollection
-	public List<String> getNegativeWords() {
-		return this.negativeWords;
-	}
-
-	public void setNegativeWords(final List<String> negativeWords) {
-		this.negativeWords = negativeWords;
-	}
-
-	@NotNull
-	@ElementCollection
 	public List<String> getPositionEng() {
 		return this.positionEng;
 	}
@@ -158,16 +132,6 @@ public class Configuration extends DomainEntity {
 
 	public void setPositionEsp(final List<String> positionEsp) {
 		this.positionEsp = positionEsp;
-	}
-
-	@NotNull
-	@ElementCollection
-	public List<String> getSpam() {
-		return this.spam;
-	}
-
-	public void setSpam(final List<String> spam) {
-		this.spam = spam;
 	}
 
 }

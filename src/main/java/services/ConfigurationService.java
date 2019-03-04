@@ -74,7 +74,7 @@ public class ConfigurationService {
 
 	//MANAGE LIST OF NEGATIVE AND POSITIVE WORDS SERVICES
 
-	public List<String> getPositiveWords() {
+	public List<String> getPositionEsp() {
 		final List<String> positiveWords;
 		Configuration configlate = new Configuration();
 		final Collection<Configuration> configurations = this.configurationRepository.findAll();
@@ -82,113 +82,22 @@ public class ConfigurationService {
 			if (configurations.size() == 1)
 				configlate = t;
 
-		positiveWords = configlate.getPositiveWords();
+		positiveWords = configlate.getPositionEsp();
 
 		return positiveWords;
 	}
 
-	public List<String> getNegativeWords() {
-		final List<String> negativeWords;
-
+	public List<String> getPositionEng() {
+		final List<String> positiveWords;
 		Configuration configlate = new Configuration();
 		final Collection<Configuration> configurations = this.configurationRepository.findAll();
 		for (final Configuration t : configurations)
 			if (configurations.size() == 1)
 				configlate = t;
 
-		negativeWords = configlate.getNegativeWords();
+		positiveWords = configlate.getPositionEng();
 
-		return negativeWords;
-	}
-
-	public void CreatePositiveWord(final String word) {
-
-		Configuration configlate = new Configuration();
-		List<String> positive = new ArrayList<>();
-		final Collection<Configuration> configurations = this.configurationRepository.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-
-		Assert.isNull(configlate.getPositiveWords());
-		Assert.isTrue(!configlate.getPositiveWords().contains(word));
-		positive = configlate.getPositiveWords();
-		positive.add(word);
-		configlate.setPositiveWords(positive);
-		this.save(configlate);
-
-	}
-
-	public void CreateNegativeWord(final String word) {
-
-		Configuration configlate = new Configuration();
-		List<String> positive = new ArrayList<>();
-		final Collection<Configuration> configurations = this.configurationRepository.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-
-		Assert.isNull(configlate.getNegativeWords());
-		Assert.isTrue(!configlate.getNegativeWords().contains(word));
-		positive = configlate.getNegativeWords();
-		positive.add(word);
-		configlate.setNegativeWords(positive);
-		this.save(configlate);
-
-	}
-
-	public void deletePositiveWord(final String word) {
-		Configuration configlate = new Configuration();
-		final Collection<Configuration> configurations = this.configurationRepository.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-
-		if (configlate.getPositiveWords().contains(word))
-			configlate.getPositiveWords().remove(word);
-		this.save(configlate);
-	}
-
-	public void deleteNegativeWord(final String word) {
-		Configuration configlate = new Configuration();
-		final Collection<Configuration> configurations = this.configurationRepository.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-
-		if (configlate.getNegativeWords().contains(word))
-			configlate.getNegativeWords().remove(word);
-		this.save(configlate);
-	}
-
-	public void deleteSpamWord(final String word) {
-		Configuration configlate = new Configuration();
-		final Collection<Configuration> configurations = this.configurationRepository.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-
-		if (configlate.getSpam().contains(word))
-			configlate.getSpam().remove(word);
-		this.save(configlate);
-	}
-
-	public void CreateSpamWord(final String word) {
-
-		Configuration configlate = new Configuration();
-		List<String> spam = new ArrayList<>();
-		final Collection<Configuration> configurations = this.configurationRepository.findAll();
-		for (final Configuration t : configurations)
-			if (configurations.size() == 1)
-				configlate = t;
-
-		Assert.isNull(configlate.getSpam());
-		Assert.isTrue(!configlate.getSpam().contains(word));
-		spam = configlate.getSpam();
-		spam.add(word);
-		configlate.setSpam(spam);
-		this.save(configlate);
-
+		return positiveWords;
 	}
 
 }

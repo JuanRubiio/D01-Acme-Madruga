@@ -1,0 +1,27 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="march/edit" extends="master.page">
+		<put-attribute name="title" value="Editar petición para marchar" />
+		<put-attribute name="body" value="/views/march/edit.jsp" />
+	</definition>
+	
+	<definition name="march/create" extends="master.page">
+		<put-attribute name="title" value="Crear petición para marchar" />
+		<put-attribute name="body" value="/views/march/create.jsp" />
+	</definition>
+
+
+	<definition name="march/show" extends="master.page">
+		<put-attribute name="title" value="Ver petición para marchar" />
+		<put-attribute name="body" value="/views/march/show.jsp" />
+	</definition>
+
+	<definition name="march/list" extends="master.page">
+		<put-attribute name="title" value="Listar petición para marchar" />
+		<put-attribute name="body" value="/views/march/list.jsp" />
+	</definition>
+
+</tiles-definitions>

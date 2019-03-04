@@ -1,0 +1,21 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="member/edit" extends="master.page">
+		<put-attribute name="title" value="Editar miembro" />
+		<put-attribute name="body" value="/views/member/edit.jsp" />
+	</definition>
+	
+	<definition name="member/show" extends="master.page">
+		<put-attribute name="title" value="Ver miembro" />
+		<put-attribute name="body" value="/views/member/show.jsp" />
+	</definition>
+
+	<definition name="member/list" extends="master.page">
+		<put-attribute name="title" value="Listar miembros" />
+		<put-attribute name="body" value="/views/member/list.jsp" />
+	</definition>
+
+</tiles-definitions>

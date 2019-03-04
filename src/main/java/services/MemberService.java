@@ -49,7 +49,7 @@ public class MemberService {
 		Assert.notNull(res);
 
 		final BrotherHood brotherHood = new BrotherHood();
-		res.setBrotherHood(brotherHood);
+		//		res.setBrotherHood(brotherHood);
 
 		return res;
 	}

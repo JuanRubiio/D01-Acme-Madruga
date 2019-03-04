@@ -13,7 +13,6 @@ import org.springframework.util.Assert;
 import repositories.MarchRepository;
 import security.Authority;
 import domain.Actor;
-import domain.Autority;
 import domain.March;
 
 @Service
@@ -33,10 +32,10 @@ public class MarchService {
 		final Actor actor = this.actorService.getPrincipal();
 		final Collection<Authority> autorities = actor.getUserAccount().getAuthorities();
 		final ArrayList<String> listAuth = new ArrayList<String>();
-		
-		if(!autorities.isEmpty())
-			for(final Autority au: autorities)
-				listAuth.add(au:getAuthority());
+
+		if (!autorities.isEmpty())
+			for (final Authority au : autorities)
+				listAuth.add(au.getAuthority());
 
 		Assert.isTrue(listAuth.contains("MEMBER"));
 
@@ -63,12 +62,12 @@ public class MarchService {
 		final Actor actor = this.actorService.getPrincipal();
 		final Collection<Authority> autorities = actor.getUserAccount().getAuthorities();
 		final ArrayList<String> listAuth = new ArrayList<String>();
-		
-		if(!autorities.isEmpty())
-			for(final Autority au: autorities)
-				listAuth.add(au:getAuthority());
+
+		if (!autorities.isEmpty())
+			for (final Authority au : autorities)
+				listAuth.add(au.getAuthority());
 
 		Assert.isTrue(listAuth.contains("MEMBER"));
- 		this.marchRepository.delete(march);
+		this.marchRepository.delete(march);
 	}
 }

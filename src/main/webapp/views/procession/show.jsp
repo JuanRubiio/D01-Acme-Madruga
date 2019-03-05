@@ -10,15 +10,9 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 <div>
-	<p><spring:message code="procession.title" />: <jstl:out value="${title}"></jstl:out></p>
-	<p><spring:message code="procession.description" />: <jstl:out value="${description}"></jstl:out></p>
-	<p><spring:message code="procession.moment" />: <jstl:out value="${moment}"></jstl:out></p>
-	<p><spring:message code="procession.ticker" />: <jstl:out value="${ticker}"></jstl:out></p>
-	<p><spring:message code="procession.draft" />: <jstl:out value="${draft}"></jstl:out></p>
-
-	<p><spring:message code="procession.floats" />:</p>
-	<jstl:forEach items="${floats}" var="float">
-	<p><jstl:out value="${float.title}"></jstl:out></p>
-	</jstl:forEach>
-
+	<p><spring:message code="procession.title" />: <jstl:out value="${procession.title}"></jstl:out></p>
+	<p><spring:message code="procession.description" />: <jstl:out value="${procession.description}"></jstl:out></p>
+	<p><spring:message code="procession.moment" />: <jstl:out value="${procession.moment}"></jstl:out></p>
+	<p><spring:message code="procession.ticker" />: <jstl:out value="${procession.ticker}"></jstl:out></p>
+	<p><spring:message code="procession.draft" />: <jstl:out value="${procession.draft}"></jstl:out></p>
 </div>

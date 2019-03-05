@@ -25,7 +25,7 @@ public class FloatServiceTest extends AbstractTest {
 
 	@Test
 	public void testSaveFloat() {
-		//super.authenticate("brotherhood1");
+		super.authenticate("brotherhood1");
 		final domain.Float floatt = this.floatService.findOne(10);
 		floatt.setDescription("esta es una nueva descripcion");
 		this.floatService.save(floatt);
@@ -34,14 +34,14 @@ public class FloatServiceTest extends AbstractTest {
 
 	@Test
 	public void testCreate() {
-		//super.authenticate("brotherhood1");
+		super.authenticate("brotherhood1");
 		final domain.Float floatt = this.floatService.create();
 		Assert.notNull(floatt);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testDeleteFloat() {
-		//super.authenticate("brotherhood1");
+		super.authenticate("brotherhood1");
 		domain.Float floatt;
 		floatt = this.floatService.findOne(10);
 		this.floatService.delete(floatt);

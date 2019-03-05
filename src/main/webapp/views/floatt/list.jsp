@@ -11,7 +11,7 @@
 
 <div>
 	<display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="floatts" requestURI="${requestURI}" id="row">
+	name="floats" requestURI="${requestURI}" id="row">
 	
 	<spring:message code="floatt.title" var="titleHeader" />
 	<display:column property="title" title="${titleHeader}" />

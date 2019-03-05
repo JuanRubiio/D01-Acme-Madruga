@@ -53,7 +53,7 @@
 	
 		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
 		
-		<security:intercept-url pattern="/floatt/brotherhood/**" access="hasRole('BROTHERHOOD')" /> 
+		<security:intercept-url pattern="/floatt/brotherhood/list.do" access="hasRole('BROTHERHOOD')" /> 
 
 		<security:form-login 
 			login-page="/security/login.do"

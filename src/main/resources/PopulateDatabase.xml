@@ -59,4 +59,151 @@
 	
 	<!-- Other domain beans come here -->	
 	
+	<bean id="enrolment1" class="domain.Enrolment">
+		<property name="moment" value="2018/02/21 23:45:00"/>
+		<property name="position" value="1"/>
+		<property name="member" value="member1"/>
+		<property name="brotherHood" value="brotherHood1"/>
+	</bean>
+	
+	<bean id="enrolment2" class="domain.Enrolment">
+		<property name="moment" value="1980/01/01 23:45:00"/>
+		<property name="position" value="1"/>
+		<property name="member" value="member2"/>
+		<property name="brotherHood" value="brotherHood2"/>
+	</bean>
+	
+	<bean id="enrolment3" class="domain.Enrolment">
+		<property name="moment" value="1980/01/01 23:45:00"/>
+		<property name="position" value="1"/>
+		<property name="member" value="member3"/>
+		<property name="brotherHood" value="brotherHood3"/>
+	</bean>
+	
+	<bean id="brotherhood1" class="domain.Brotherhood">
+		<property name="name" value="Brotherhood Name 1" />
+		<property name="middleName" value="Brotherhood Middle Name 1" />
+		<property name="surname" value="Brotherhood Surname 1" />
+		<property name="email" value="brotherhood1@email.com" />
+		<property name="photo" value="https://photobrotherhood1.jpg" />
+		<property name="address" value="Brotherhood Address 1" />
+		<property name="phone" value="616616616" />
+		<property name="userAccount" ref="userAccount1" />
+		<property name="title" value="Brotherhood Title 1" />
+		<property name="establishmentDate" value="2019/01/01" />
+		<property name="photos">
+			<list>
+				<value>https://picture1.jpg</value>
+				<value>https://picture2.jpg</value>
+				<value>https://picture3.jpg</value>
+			</list>
+		</property>
+		<property name="processions">
+			<list>
+				<ref bean="procession1" />
+				<ref bean="procession2" />
+			</list>
+		</property>
+		<property name="floats">
+			<list>
+				<ref bean="float1" />
+				<ref bean="float2" />
+				<ref bean="float3" />
+			</list>
+		</property>
+		<property name="enrolments">
+			<list>
+				<ref bean="enrolment1" />
+				<ref bean="enrolment2" />
+			</list>
+		</property>
+
+		<property name="area" ref="area1" />
+
+	</bean>
+	
+	<bean id="brotherhood2" class="domain.Brotherhood">
+		<property name="name" value="Brotherhood Name 2" />
+		<property name="middleName" value="Brotherhood Middle Name 2" />
+		<property name="surname" value="Brotherhood Surname 2" />
+		<property name="email" value="brotherhood2@email.com" />
+		<property name="photo" value="https://photobrotherhood2.jpg" />
+		<property name="address" value="Brotherhood Address 2" />
+		<property name="phone" value="717717717" />
+		<property name="userAccount" ref="userAccount2" />
+		<property name="title" value="Brotherhood Title 2" />
+		<property name="establishmentDate" value="2019/01/02" />
+		<property name="photos">
+			<list>
+				<value>https://picture1.jpg</value>
+				<value>https://picture2.jpg</value>
+				<value>https://picture3.jpg</value>
+			</list>
+		</property>
+		<property name="processions">
+			<list>
+				<ref bean="procession1" />
+				<ref bean="procession2" />
+			</list>
+		</property>
+		<property name="floats">
+			<list>
+				<ref bean="float1" />
+				<ref bean="float2" />
+				<ref bean="float3" />
+			</list>
+		</property>
+		<property name="enrolments">
+			<list>
+				<ref bean="enrolment1" />
+				<ref bean="enrolment3" />
+			</list>
+		</property>
+
+		<property name="area" ref="area2" />
+
+	</bean>
+	
+	<bean id="brotherhood3" class="domain.Brotherhood">
+		<property name="name" value="Brotherhood Name 3" />
+		<property name="middleName" value="Brotherhood Middle Name 3" />
+		<property name="surname" value="Brotherhood Surname 3" />
+		<property name="email" value="brotherhood3@email.com" />
+		<property name="photo" value="https://photobrotherhood3.jpg" />
+		<property name="address" value="Brotherhood Address 3" />
+		<property name="phone" value="717717717" />
+		<property name="userAccount" ref="userAccount3" />
+		<property name="title" value="Brotherhood Title 3" />
+		<property name="establishmentDate" value="2019/02/02" />
+		<property name="photos">
+			<list>
+				<value>https://picture1.jpg</value>
+				<value>https://picture2.jpg</value>
+				<value>https://picture3.jpg</value>
+			</list>
+		</property>
+		<property name="processions">
+			<list>
+				<ref bean="procession1" />
+				<ref bean="procession3" />
+			</list>
+		</property>
+		<property name="floats">
+			<list>
+				<ref bean="float1" />
+				<ref bean="float2" />
+				<ref bean="float3" />
+			</list>
+		</property>
+		<property name="enrolments">
+			<list>
+				<ref bean="enrolment2" />
+				<ref bean="enrolment3" />
+			</list>
+		</property>
+
+		<property name="area" ref="area3" />
+
+	</bean>
+	
 </beans>

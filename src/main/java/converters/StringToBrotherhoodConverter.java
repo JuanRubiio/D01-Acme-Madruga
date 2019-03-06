@@ -1,0 +1,37 @@
+
+package converters;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import repositories.BrotherhoodRepository;
+import domain.Brotherhood;
+
+@Component
+@Transactional
+public class StringToBrotherhoodConverter implements Converter<String, Brotherhood> {
+
+	@Autowired
+	private BrotherhoodRepository	brotherhoodRepository;
+
+
+	@Override
+	public Brotherhood convert(final String text) {
+		Brotherhood result;
+		int id;
+
+		try {
+			if (StringUtils.isEmpty(text))
+				result = null;
+			else {
+				id = Integer.valueOf(text);
+				result = this.brotherhoodRepository.findOne(id);
+			}
+		} catch (final Throwable oops) {
+			throw new IllegalArgumentException(oops);
+		}
+		return result;
+	}
+}

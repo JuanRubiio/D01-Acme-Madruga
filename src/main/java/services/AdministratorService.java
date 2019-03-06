@@ -69,30 +69,27 @@ public class AdministratorService {
 		return res;
 	}
 
-	//Queries del dashboard
-	//	public List<Object> query1() {
-	//		return this.administratorRepository.query1();
-	//	}
-	//	public List<Object> query2() {
-	//		return this.administratorRepository.query2();
-	//	}
-	//	public List<Object> query3() {
-	//		return this.administratorRepository.query3();
-	//	}
-	//	public List<Object> query4() {
-	//		return this.administratorRepository.query4();
-	//	}
-	//	public Double query5() {
-	//		return this.administratorRepository.query5();
-	//	}
-	//	public Double query6() {
-	//		return this.administratorRepository.query6();
-	//	}
-	//	public Double query7() {
-	//		return this.administratorRepository.query7();
-	//	}
-	//	public Double query8() {
-	//		return this.administratorRepository.query8();
-	//	}
+	public List<Object> query1() {
+		return this.administratorRepository.query1();
+	}
+	public Object query2() {
+
+		return this.administratorRepository.query2();
+	}
+	public List<Object> query3() {
+		return this.administratorRepository.query3();
+	}
+	public List<Object> query4() {
+		return this.administratorRepository.query4();
+	}
+	public List<Object> query5() {
+		return this.administratorRepository.query5();
+	}
+	public Object query6() {
+		return this.administratorRepository.query6();
+	}
+	public Double query7() {
+		return this.administratorRepository.query7();
+	}
 
 }

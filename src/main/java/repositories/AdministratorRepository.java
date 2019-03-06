@@ -1,7 +1,10 @@
 
 package repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import domain.Administrator;
@@ -32,5 +35,26 @@ public interface AdministratorRepository extends JpaRepository<Administrator, In
 	//
 	//	@Query("select 1.0*count(a)/(select count(a) from Application a) from Application a join a.fixUpTask f where a.status = 'PENDING' and a.moment > f.maxDate")
 	//	Double query8();
+
+	@Query("select min(f.maxPrice),avg(f.maxPrice), stddev(f.maxPrice),max(f.maxPrice)from Brotherhood f")
+	List<Object> query1();
+
+	@Query("select f from Brotherhood f where max(f.enrolment.size)")
+	Object query2();
+
+	@Query("select f from Brotherhood f where min(f.enrolment.size)")
+	List<Object> query3();
+
+	@Query("select sum(a.status = 'PENDING'), sum(a.status = 'REJECTED'), sum(a.status = 'APPROVED') from March a")
+	List<Object> query4();
+
+	@Query("select f from Procession f where f.moment between CURRENT_DATE and CURRENT_DATE + 30")
+	List<Object> query5();
+
+	@Query("select a from Procession a where a.moment.month = 2")
+	Object query6();
+
+	@Query("select count(r.march)/(select count(a.march) from Member a where a.march.status = 'APPROVED')*1.0 from Member r")
+	Double query7();
 
 }

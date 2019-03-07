@@ -1,5 +1,25 @@
 #./src/main/resources/Entities.map
-#Sat Feb 16 20:18:59 CET 2019
-userAccount3=6
-userAccount2=5
-userAccount1=4
+#Thu Mar 07 13:07:24 CET 2019
+march3=99
+enrolment2=108
+member2=94
+march2=97
+enrolment1=106
+member1=93
+march1=96
+procession2=98
+brotherhood1=107
+procession1=95
+admin=90
+configuration=105
+userAccount4=89
+administrator3=92
+userAccount3=88
+administrator2=91
+userAccount2=87
+userAccount1=86
+area2=101
+area1=100
+float3=104
+float2=103
+float1=102

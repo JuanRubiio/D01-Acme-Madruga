@@ -20,12 +20,20 @@
 <div>
 	<ul id="jMenu">
 		<!-- Do not forget the "fNiv" class for the first level links !! -->
+		
+	<security:authorize access="isAnonymous()">
+	<li><a href="security/login.do"><spring:message code="master.page.login" /></a></li>
+	<li><a class="fNiv" href="actor/registerMember.do"><spring:message code="master.page.registerMember" /></a></li>
+	<li><a class="fNiv" href="actor/registerBrotherhood.do"><spring:message	code="master.page.registerBrotherhood" /></a></li>
+	
+	</security:authorize>
+		
 		<security:authorize access="hasRole('ADMIN')">
 			<li><a class="fNiv"><spring:message	code="master.page.administrator" /></a>
 				<ul>
 					<li class="arrow"></li>
-					<li><a href="administrator/action-1.do"><spring:message code="master.page.administrator.action.1" /></a></li>
-					<li><a href="administrator/action-2.do"><spring:message code="master.page.administrator.action.2" /></a></li>					
+					<li><a href="administrator/dashboard.do"><spring:message code="master.page.administrator.dashboard" /></a></li>
+					<li><a href="configuration/administrator/show.do"><spring:message code="master.page.administrator.configuration" /></a></li>
 				</ul>
 			</li>
 		</security:authorize>
@@ -40,9 +48,7 @@
 			</li>
 		</security:authorize>
 		
-		<security:authorize access="isAnonymous()">
-			<li><a class="fNiv" href="security/login.do"><spring:message code="master.page.login" /></a></li>
-		</security:authorize>
+
 		
 		<security:authorize access="isAuthenticated()">
 			<li>
